@@ -1,4 +1,4 @@
-# Module "Store Status" for HikaMarket
+# Module "Store Statistics" for HikaMarket
 
 Display some marketplace statistics.
 
