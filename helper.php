@@ -110,4 +110,18 @@ class ModHikamarketStatsHelper
 			return $total_users;
 		}
 	}
+	
+	/**
+	 * @return mod_hikamarket_stats params
+	 */
+	public static function getData(&$params) {
+		$ShowHideParams = array();
+		
+		$ShowHideParams['show_total_vendors'] = $params->get('show_total_vendors');
+		$ShowHideParams['show_total_products'] = $params->get('show_total_products');
+		$ShowHideParams['show_total_shipped_orders'] = $params->get('show_total_shipped_orders');
+		$ShowHideParams['show_total_online'] = $params->get('show_total_online');
+		
+		return $ShowHideParams;
+	}
 }

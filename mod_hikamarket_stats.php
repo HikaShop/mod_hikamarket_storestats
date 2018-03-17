@@ -25,4 +25,5 @@ $product_count			= modHikamarketStatsHelper::getTotalProducts($params);
 $shipped_order_count	= modHikamarketStatsHelper::getTotalShippedOrders($params);
 $online_num				= modHikamarketStatsHelper::getOnlineCount($params);
 $total_users			= modHikamarketStatsHelper::getOnlineCount($params);
+$ShowHideParams			= modHikamarketStatsHelper::getData($params);
 require JModuleHelper::getLayoutPath('mod_hikamarket_stats');
