@@ -8,3 +8,8 @@
 #hika-stats h3 { padding-bottom: 10px; color: #fff; }
 #hika-stats .stat { margin: 0 20px; }
 #hika-stats .stat strong { font-size: 18px; font-weight: 600; }
+
+@media only screen and (max-width: 568px) {
+  	#hika-stats { padding: 10px; }
+	.stat-container .stat { display: block; }
+}
