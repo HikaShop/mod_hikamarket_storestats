@@ -15,7 +15,7 @@ jQuery(document).ready(function($) {
 	});
 });
 </script>
-<div id="hika-stats" class="<?php echo $moduleclass_sfx; ?>">
+<div id="hika-stats" class="<?php echo $params->get( 'moduleclass_sfx' ); ?>">
 	<?php if($module->showtitle) { echo '<h3>' .$module->title .'</h3>'; } ?>
 	<div class="stat-container">
 		<span class="stat"><?php echo JText::_('MOD_HIKAMARKET_STATS_TOTAL_VENDORS') ?> <strong class="total-vendors counter"><?php echo $vendor_count; ?></strong></span>
