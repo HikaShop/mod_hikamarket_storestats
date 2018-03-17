@@ -20,6 +20,7 @@ jQuery(document).ready(function($) {
 	<div class="stat-container">
 		<span class="stat"><?php echo JText::_('MOD_HIKAMARKET_STATS_TOTAL_VENDORS') ?> <strong class="total-vendors counter"><?php echo $vendor_count; ?></strong></span>
 		<span class="stat"><?php echo JText::_('MOD_HIKAMARKET_STATS_TOTAL_PRODUCTS') ?> <strong class="total-products counter"><?php echo $product_count; ?></strong></span>
+		<span class="stat"><?php echo JText::_('MOD_HIKAMARKET_STATS_TOTAL_SHIPPED_ORDERS') ?> <strong class="total-shipped-orders counter"><?php echo $shipped_order_count; ?></strong></span>
 		<span class="stat"><?php echo JText::_('MOD_HIKAMARKET_STATS_ONLINE') ?> <strong class="total-online counter"><?php echo $online_num; ?><?php echo $total_users; ?></strong></span>
 	</div>
 </div>

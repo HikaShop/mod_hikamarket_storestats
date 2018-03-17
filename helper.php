@@ -50,6 +50,26 @@ class ModHikamarketStatsHelper
 	}
 
 	/**
+	 * Method to get total count of shipped orders.
+	 *
+	 */
+	public static function getTotalShippedOrders() {
+		$db			= JFactory::getDbo();
+		$query		= $db->getQuery(true);
+		
+		$query->select('count(*)')
+		->from('#__hikashop_order')
+		->where(array(
+				'order_status = "shipped"'
+		));
+		
+		$db->setQuery($query);
+		$shipped_order_count = $db->loadResult();
+		
+		return $shipped_order_count;
+	}
+
+	/**
 	 * Method to get frontend online users.
 	 *
 	 */

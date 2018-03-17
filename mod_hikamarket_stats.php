@@ -20,8 +20,9 @@ if(!include_once(rtrim(JPATH_ADMINISTRATOR,DS).DS.'components'.DS.'com_hikamarke
 // Include the statistics functions only once.
 require_once dirname(__FILE__) . '/helper.php';
 
-$vendor_count	= modHikamarketStatsHelper::getTotalVendors($params);
-$product_count	= modHikamarketStatsHelper::getTotalProducts($params);
-$online_num		= modHikamarketStatsHelper::getOnlineCount($params);
-$total_users	= modHikamarketStatsHelper::getOnlineCount($params);
+$vendor_count			= modHikamarketStatsHelper::getTotalVendors($params);
+$product_count			= modHikamarketStatsHelper::getTotalProducts($params);
+$shipped_order_count	= modHikamarketStatsHelper::getTotalShippedOrders($params);
+$online_num				= modHikamarketStatsHelper::getOnlineCount($params);
+$total_users			= modHikamarketStatsHelper::getOnlineCount($params);
 require JModuleHelper::getLayoutPath('mod_hikamarket_stats');
