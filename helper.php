@@ -50,6 +50,26 @@ class ModHikamarketStatsHelper
 	}
 
 	/**
+	 * Method to get total count of shipped orders.
+	 *
+	 */
+	public static function getTotalShippedOrders() {
+		$db			= JFactory::getDbo();
+		$query		= $db->getQuery(true);
+		
+		$query->select('count(*)')
+		->from('#__hikashop_order')
+		->where(array(
+				'order_status = "shipped"'
+		));
+		
+		$db->setQuery($query);
+		$shipped_order_count = $db->loadResult();
+		
+		return $shipped_order_count;
+	}
+
+	/**
 	 * Method to get frontend online users.
 	 *
 	 */
@@ -89,5 +109,19 @@ class ModHikamarketStatsHelper
 
 			return $total_users;
 		}
+	}
+	
+	/**
+	 * @return mod_hikamarket_stats params
+	 */
+	public static function getData(&$params) {
+		$ShowHideParams = array();
+		
+		$ShowHideParams['show_total_vendors'] = $params->get('show_total_vendors');
+		$ShowHideParams['show_total_products'] = $params->get('show_total_products');
+		$ShowHideParams['show_total_shipped_orders'] = $params->get('show_total_shipped_orders');
+		$ShowHideParams['show_total_online'] = $params->get('show_total_online');
+		
+		return $ShowHideParams;
 	}
 }

@@ -15,11 +15,20 @@ jQuery(document).ready(function($) {
 	});
 });
 </script>
-<div id="hika-stats" class="<?php echo $moduleclass_sfx; ?>">
+<div id="hika-stats" class="<?php echo $params->get( 'moduleclass_sfx' ); ?>">
 	<?php if($module->showtitle) { echo '<h3>' .$module->title .'</h3>'; } ?>
 	<div class="stat-container">
-		<span class="stat"><?php echo JText::_('MOD_HIKAMARKET_STATS_TOTAL_VENDORS') ?> <strong class="total-vendors counter"><?php echo $vendor_count; ?></strong></span>
-		<span class="stat"><?php echo JText::_('MOD_HIKAMARKET_STATS_TOTAL_PRODUCTS') ?> <strong class="total-products counter"><?php echo $product_count; ?></strong></span>
-		<span class="stat"><?php echo JText::_('MOD_HIKAMARKET_STATS_ONLINE') ?> <strong class="total-online counter"><?php echo $online_num; ?><?php echo $total_users; ?></strong></span>
+		<?php if($ShowHideParams['show_total_vendors']==1):?>	
+			<span class="stat"><?php echo JText::_('MOD_HIKAMARKET_STATS_TOTAL_VENDORS') ?> <strong class="total-vendors counter"><?php echo $vendor_count; ?></strong></span>
+		<?php endif; ?>
+		<?php if($ShowHideParams['show_total_products']==1):?>
+			<span class="stat"><?php echo JText::_('MOD_HIKAMARKET_STATS_TOTAL_PRODUCTS') ?> <strong class="total-products counter"><?php echo $product_count; ?></strong></span>
+		<?php endif; ?>
+		<?php if($ShowHideParams['show_total_shipped_orders']==1):?>
+			<span class="stat"><?php echo JText::_('MOD_HIKAMARKET_STATS_TOTAL_SHIPPED_ORDERS') ?> <strong class="total-shipped-orders counter"><?php echo $shipped_order_count; ?></strong></span>
+		<?php endif; ?>
+		<?php if($ShowHideParams['show_total_online']==1):?>
+			<span class="stat"><?php echo JText::_('MOD_HIKAMARKET_STATS_ONLINE') ?> <strong class="total-online counter"><?php echo $online_num; ?><?php echo $total_users; ?></strong></span>
+		<?php endif; ?>
 	</div>
 </div>
